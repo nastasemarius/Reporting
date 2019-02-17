@@ -1,7 +1,7 @@
 import Express from 'express';
 import {ReportingServiceController} from './reporting-service.controller';
 
-const PORT = 3000;
+const DEFAULT_PORT = 3000;
 
 class Application {
 
@@ -15,7 +15,7 @@ class Application {
         this.app.get('/',(req,res)=>{
             res.send('move to \/getreport to fetch some data');
         });
-        this.app.listen(process.env.PORT || 3000, ()=>{
+        this.app.listen(process.env.PORT || DEFAULT_PORT, ()=>{
             console.log(`Server running on port ${PORT}`);
         });
     }
