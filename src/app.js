@@ -15,7 +15,7 @@ class Application {
         this.app.get('/',(req,res)=>{
             res.send('move to \/getreport to fetch some data');
         });
-        this.app.listen(PORT, ()=>{
+        this.app.listen(process.env.PORT || 3000, ()=>{
             console.log(`Server running on port ${PORT}`);
         });
     }
