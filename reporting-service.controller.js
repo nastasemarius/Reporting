@@ -1,8 +1,7 @@
 import ReportingServiceModel from './reporting-service.model';
 
-class ReportingServiceController {
-    constructor(app) {
-        instantiate(app);
+export class ReportingServiceController {
+    constructor() {
     }
 
     instantiate(app) {
