@@ -22,5 +22,5 @@ class Application {
     }
 }
 
-const app = new Application();
+new Application();
 
