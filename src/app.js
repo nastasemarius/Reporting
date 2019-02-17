@@ -12,6 +12,9 @@ class Application {
     }
 
     startServer(){
+        this.app.get('/',(req,res)=>{
+            res.send('move to \/getreport to fetch some data');
+        });
         this.app.listen(PORT, ()=>{
             console.log(`Server running on port ${PORT}`);
         });
