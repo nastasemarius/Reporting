@@ -1,14 +1,22 @@
+import mongoose from 'mongoose';
+
 class ReportingServiceModel {
-    GetReport(req,res){
-        return {
-            data: [
-                {
-                    _id: "#1",
-                    name:"data point #1",
-                    value: 100.5
-                }
-            ]
-        }
+    constructor(){
+        this.reportSchema = mongoose.Schema({
+            name: String,
+            value: Number
+        });
+        this.Report = mongoose.Model('Report',this.reportSchema);
+    }
+
+    GetAllReports(req, res) {
+        this.Report.find()
+            .then(reports => {
+                res.send(reports);
+            })
+            .catch(err => {
+                res.send({ error: err })
+            });
     }
 }
 
