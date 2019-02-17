@@ -2,10 +2,11 @@
   "name": "Reporting",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/babel-node app.js"
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/app.js",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel -d ./build ./src -s"
   },
   "repository": {
     "type": "git",
@@ -19,12 +20,11 @@
   },
   "homepage": "https://github.com/nastasemarius/Reporting#readme",
   "dependencies": {
-    "babel-node": "6.5.3",
     "express": "^4.16.4"
   },
   "devDependencies": {
     "@types/express": "^4.16.1",
-    "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.7.0"
+    "babel-preset-env": "^1.7.0",
+    "babel-cli":"6.26.0"
   }
 }
