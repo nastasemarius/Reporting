@@ -1,5 +1,6 @@
 import Express from 'express';
 import { ReportingServiceController } from './reporting-service.controller';
+import DB from './database';
 
 const DEFAULT_PORT = 3000;
 

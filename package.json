@@ -7,7 +7,7 @@
     "start": "npm run build && node ./build/app.js",
     "clean": "rm -rf build && mkdir build",
     "build-babel": "babel -d ./build ./src -s",
-    "dev": "babel-node ./src/app.js"
+    "dev": "nodemon --exec babel-node ./src/app.js"
   },
   "repository": {
     "type": "git",

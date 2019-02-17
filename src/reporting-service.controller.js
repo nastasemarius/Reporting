@@ -5,8 +5,12 @@ export class ReportingServiceController {
     }
 
     instantiate(app) {
-        app.get('/getreport', (req, res) => {
-           ReportingServiceModel.GetAllReports(req, res)
+        app.get('/getreports', (req, res) => {
+            ReportingServiceModel.GetAllReports(req, res)
+        });
+
+        app.get('/addreport', (req, res) => {
+            ReportingServiceModel.AddReport(req,res);
         });
 
         app.get('/getcsv', (req, res) => {
